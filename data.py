@@ -46,3 +46,17 @@ class ExpectedResponse:
             "message": "User with such email already exists"
         }
     }
+    MAKE_ORDER_SUCCESSFULLY = {
+        'status_code': 200,
+        'response_text_keys': ['name', 'order', 'success']
+    }
+    MAKE_ORDER_NO_INGREDIENTS = {
+        'status_code': 400,
+        'response_text': {
+            "success": False,
+            "message": "Ingredient ids must be provided"
+        }
+    }
+    MAKE_ORDER_INVALID_INGREDIENT_ID = {
+        'status_code': 500
+    }

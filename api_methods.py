@@ -29,3 +29,18 @@ class ApiMethods:
         response = requests.patch(ApiUrls.UPDATE_USER_DATA, headers=headers, data=data)
 
         return response
+
+    @staticmethod
+    @allure.step('Создание заказа')
+    def make_order(token, data):
+        headers = {'Authorization': token}
+        response = requests.post(ApiUrls.MAKE_ORDER, headers=headers, data=data)
+
+        return response
+
+    @staticmethod
+    @allure.step('Получить информацию об ингредиентах')
+    def ingredients():
+        response = requests.get(ApiUrls.INGREDIENTS)
+
+        return response
