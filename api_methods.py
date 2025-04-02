@@ -9,3 +9,15 @@ class ApiMethods:
         response = requests.post(ApiUrls.USER_CREATION, data=data)
 
         return response
+
+    @staticmethod
+    @allure.step('Удаление пользователя')
+    def delete_user(token):
+        requests.delete(ApiUrls.DELETE_USER + token)
+
+    @staticmethod
+    @allure.step('Логин пользователя')
+    def login_user(data):
+        response = requests.post(ApiUrls.LOGIN_USER, data=data)
+
+        return response
