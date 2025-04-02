@@ -21,3 +21,11 @@ class ApiMethods:
         response = requests.post(ApiUrls.LOGIN_USER, data=data)
 
         return response
+
+    @staticmethod
+    @allure.step('Изменение данных пользователя')
+    def update_user_data(token, data):
+        headers = {'Authorization': token}
+        response = requests.patch(ApiUrls.UPDATE_USER_DATA, headers=headers, data=data)
+
+        return response

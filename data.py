@@ -28,3 +28,21 @@ class ExpectedResponse:
             "message": "email or password are incorrect"
         }
     }
+    UPDATE_USER_DATA_SUCCESSFULLY = {
+        'status_code': 200,
+        'response_text_keys': ['accessToken', 'refreshToken', 'success', 'user']
+    }
+    UPDATE_USER_DATA_NO_AUTHORIZATION = {
+        'status_code': 401,
+        'response_text': {
+            "success": False,
+            "message": "You should be authorised"
+        }
+    }
+    UPDATE_USER_DATA_EMAIL_ALREADY_EXIST = {
+        'status_code': 403,
+        'response_text': {
+            "success": False,
+            "message": "User with such email already exists"
+        }
+    }
