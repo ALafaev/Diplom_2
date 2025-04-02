@@ -60,3 +60,14 @@ class ExpectedResponse:
     MAKE_ORDER_INVALID_INGREDIENT_ID = {
         'status_code': 500
     }
+    GET_USER_ORDERS_SUCCESSFULLY = {
+        'status_code': 200,
+        'response_text_keys': ['success', 'orders', 'total', 'totalToday']
+    }
+    GET_USER_ORDERS_UNAUTHORIZED = {
+        'status_code': 401,
+        'response_text': {
+            "success": False,
+            "message": "You should be authorised"
+        }
+    }

@@ -11,7 +11,7 @@ class TestCreateUser:
         response = ApiMethods.create_user(reg_values)
 
         assert (response.status_code == ExpectedResponse.USER_CREATION_SUCCESSFULLY['status_code']
-                and CheckResponse.check_create_user_response_dict_keys(response)), "Ответ сервера не совпадает с ожидаемым"
+                and CheckResponse.check_create_user_response(response)), "Ответ сервера не совпадает с ожидаемым"
         token = response.json()["accessToken"]
         ApiMethods.delete_user(token)
 

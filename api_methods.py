@@ -44,3 +44,11 @@ class ApiMethods:
         response = requests.get(ApiUrls.INGREDIENTS)
 
         return response
+
+    @staticmethod
+    @allure.step('Получить список заказов пользователя')
+    def get_user_orders(token):
+        headers = {'Authorization': token}
+        response = requests.get(ApiUrls.GET_USERS_ORDERS, headers=headers)
+
+        return response

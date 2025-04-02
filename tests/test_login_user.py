@@ -16,7 +16,7 @@ class TestLoginUser:
         login_response = ApiMethods.login_user(login_values)
 
         assert (login_response.status_code == ExpectedResponse.USER_LOGIN_SUCCESSFULLY['status_code']
-                and CheckResponse.check_login_user_response_dict_keys(login_response)), "Ответ сервера не совпадает с ожидаемым"
+                and CheckResponse.check_login_user_response(login_response)), "Ответ сервера не совпадает с ожидаемым"
         token = user_create_response.json()["accessToken"]
         ApiMethods.delete_user(token)
 
@@ -46,8 +46,7 @@ class TestLoginUser:
         login_response = ApiMethods.login_user(login_values)
 
         assert (login_response.status_code == ExpectedResponse.USER_LOGIN_INCORRECT_DATA['status_code']
-                and login_response.json() == ExpectedResponse.USER_LOGIN_INCORRECT_DATA[
-                    'response_text']), "Ответ сервера не совпадает с ожидаемым"
+                and login_response.json() == ExpectedResponse.USER_LOGIN_INCORRECT_DATA['response_text']), "Ответ сервера не совпадает с ожидаемым"
         token = user_create_response.json()["accessToken"]
         ApiMethods.delete_user(token)
 

@@ -8,3 +8,4 @@ class ApiUrls:
     UPDATE_USER_DATA = BaseUrls.BASE_URL + '/api/auth/user'
     MAKE_ORDER = BaseUrls.BASE_URL + '/api/orders'
     INGREDIENTS = BaseUrls.BASE_URL + '/api/ingredients'
+    GET_USERS_ORDERS = BaseUrls.BASE_URL + '/api/orders'
